@@ -1,4 +1,7 @@
 /**
+ * Modified Version of Hashgrid by MAD <code@madsgraphics.com>
+ */
+/**
  * hashgrid (jQuery version, adapters are on the way)
  * http://github.com/dotjay/hashgrid
  * Version 9, 30 May 2013
@@ -74,6 +77,7 @@ var hashgrid = function(set) {
 			foregroundKey: 'f',     // key to toggle foreground/background
 			jumpGridsKey: 'j',      // key to cycle through the grid classes
 			numberOfGrids: 1,       // number of grid classes used
+			maxColumns: 30,         // max number of columns to inject into the DOM
 			classPrefix: 'grid-',   // prefix for the grid classes
 			cookiePrefix: 'hashgrid'// prefix for the cookie name
 		},
@@ -176,7 +180,7 @@ var hashgrid = function(set) {
 	// 30 is an arbitrarily large number...
 	// can't calculate the margin width properly
 	gridLines = '';
-	for (i = 0; i < 30; i++) {
+	for (i = 0; i < options.maxColumns; i++) {
 		gridLines += '<div class="vert">&nbsp;</div>';
 	}
 	overlayVert.append(gridLines);
